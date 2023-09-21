@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logoPurple from '../images/mp_logo_purple.svg';
+import NavBar from "./ui/Header";
 ---
-<Image class="h-8" src={logoPurple} alt="A bird sitting on a nest of eggs."/>
 
-Header
+<NavBar client:load />

@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import webIcon from "../images/weboldal_webaruhazkeszites.svg";
+---
+
+<div class="relative isolate bg-white pt-24 pb-32 sm:pt-32">
+  <div id="szolgaltatasok" class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2
+        class="font-semibold uppercase text-base text-primary first-letter:leading-7"
+      >
+        Szolgáltatások
+      </h2>
+      <p
+        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+      >
+        Full service marketing
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Teljes körű, a marketingkommunikáció minden formáját tartalmazó
+        szolgáltatást nyújtunk, mintha cégednek marketing, PPC és SM
+        menedzserből, webfejlesztőből, grafikusból, szövegíróból álló, egész
+        marketingosztálya lenne.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl
+        class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+      >
+        <div
+          class="services-card mx-auto relative flex flex-col rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 hover:-translate-y-3 transition-transform"
+        >
+          <dt
+            class="services-card_head-wrapper flex flex-col font-semibold leading-7 text-base text-gray-900"
+          >
+            <div class="">
+              <div>
+                <Image
+                  aria-hidden="true"
+                  class="w-[4em] bg-transparent text-white"
+                  src={webIcon}
+                  alt="Weboldal ikon"
+                />
+              </div>
+            </div>
+
+            <h3 class="mt-4 text-xl">
+              <a class="clickable-parent" href="#">
+                Weboldal és webáruházkészítés
+              </a>
+            </h3>
+          </dt>
+          <dd
+            class="mt-4 flex flex-auto flex-col leading-7 text-base text-gray-600"
+          >
+            <p class="mb-4">
+              Felhasználó-, mobil- és keresőbarát, a célközönség hatékony
+              elérését szolgáló, a marketingcélokat támogató honlapokat
+              készítünk, üzemeltetünk.
+            </p>
+            <div class="services-card_footer">
+              <p
+                aria-hidden="true"
+                class="text-sm font-semibold leading-6 text-primary"
+              >
+                Részletes leírás →
+              </p>
+            </div>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
