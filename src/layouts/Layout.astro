@@ -1,9 +1,9 @@
 ---
-import Header from '../components/ui/Header.jsx';
-import Footer from '../components/Footer.astro';
+import Header from "../components/ui/Header.jsx";
+import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,19 +11,44 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header client:load />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header client:load />
+    <slot />
+    <Footer />
+  </body>
+  <style is:global>
+    .custom-shadow {
+      box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    }
+    .clickable-parent::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      cursor: pointer;
+    }
+
+    .services-card_footer {
+      margin-block-start: auto;
+    }
+
+    .services-card:focus-within {
+      box-shadow: 0 0 0 1.5px #472692;
+    }
+
+    .services-card:focus-within .services-card_head-wrapper a:focus {
+      outline: none;
+    }
+  </style>
 </html>
-
-

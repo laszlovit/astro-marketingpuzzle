@@ -3,7 +3,7 @@ import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-const products = [
+const services = [
   {
     name: "Weboldal- és webáruházkészítés",
     href: "#",
@@ -50,7 +50,10 @@ export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="custom-shadow bg-white">
+    <header
+      className="custom-shadow bg-white sticky
+     top-0 z-50"
+    >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -112,7 +115,7 @@ export default function NavBar() {
             >
               <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-min -translate-x-1/2 px-4">
                 <div className="w-56 shrink rounded-xl bg-white p-4 text-sm font-semibold leading-6 text-gray-900 shadow-lg ring-1 ring-gray-900/5">
-                  {products.map((item) => (
+                  {services.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -216,7 +219,7 @@ export default function NavBar() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products].map((item) => (
+                        {[...services].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
