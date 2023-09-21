@@ -133,12 +133,6 @@ export default function NavBar() {
             Rólunk
           </a>
           <a
-            href="/marketingszotar"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Marketingszótár
-          </a>
-          <a
             href="/blog"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
