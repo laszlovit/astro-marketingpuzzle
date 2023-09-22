@@ -50,10 +50,7 @@ export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      className="custom-shadow bg-white sticky
-     top-0 z-50"
-    >
+    <header className="custom-shadow bg-white">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
