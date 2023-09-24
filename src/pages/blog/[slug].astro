@@ -1,0 +1,66 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    };
+  });
+  return paths;
+};
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const { Content, headings } = await post.render();
+---
+
+<Layout
+  title={post.data.title}
+  image={post.data.image}
+  description={post.data.description}
+>
+  <article class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
+    <div class="mx-auto max-w-2xl lg:max-w-none">
+      <div>
+        <header class="mx-auto flex max-w-5xl flex-col text-center">
+          <h1
+            class="mt-6 font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-6xl"
+          >
+            {post.data.title}
+          </h1>
+          <time
+            datetime="2023-04-06"
+            class="order-first text-sm text-neutral-950">April 6, 2023</time
+          >
+        </header>
+        <TableOfContents headings={headings} />
+        <figure>
+          <img
+            class="aspect-video"
+            src={post.data.image}
+            alt={post.data.title}
+          />
+        </figure>
+      </div>
+      <div
+        class="[&>*]:mx-auto [&>*]:max-w-3xl [&>:first-child]:!mt-0 [&>:last-child]:!mb-0 mt-24 sm:mt-32 lg:mt-40"
+      >
+        <div class="prose prose-xl overflow-visible relative">
+          <Content />
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
