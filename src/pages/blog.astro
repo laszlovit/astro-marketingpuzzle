@@ -7,7 +7,10 @@ import Pagination from "../components/Pagination.astro";
 const posts = (await getCollection("posts")).slice(0, 6);
 ---
 
-<Layout title="Blog - Marketing Puzzle">
+<Layout
+  title="Blog - Marketing Puzzle"
+  description="Tippek, hírek a marketing világából"
+>
   <main>
     <div class="bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
