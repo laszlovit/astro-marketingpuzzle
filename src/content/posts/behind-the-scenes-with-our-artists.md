@@ -4,7 +4,7 @@ categories: ["studio tips"]
 date: 08/10/2021
 featured: false
 image: ./images/photoshoot.jpg
-title: Behind-the-scenes with our artists
+title: Behind-the-scenes with our artist
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus et ipsum.
 ---
 
